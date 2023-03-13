@@ -30,3 +30,4 @@ queue/
 celerybeat-schedule
 launch.json
 .vscode
+.idea/
