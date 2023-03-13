@@ -5,7 +5,7 @@ setup(
         include=['papermerge.*']
     ),
     install_requires=[
-        "django == 3.2",
+        "django == 3.2.18",
         "mglib == 1.3.9",
         "mgclipboard >= 0.3.0",
         "stapler == 1.0.0",
@@ -16,7 +16,7 @@ setup(
         "djangorestframework",
         "django-rest-knox",
         "pyyaml",
-        "lxml == 4.6.2",
+        "lxml == 4.9.2",
         "django-celery-results",
         "django-allauth == 0.44.0",
         "django-polymorphic",
