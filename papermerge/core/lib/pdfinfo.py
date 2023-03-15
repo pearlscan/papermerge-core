@@ -21,8 +21,8 @@ def get_tiff_pagecount(filepath):
     # Get page count from the file. On any errors defer to PIL for page count.
     with open(filepath, 'rb') as input_file:
         try:
-            fmap = mmap.mmap(input_file.fileno(), 0)
-        except (WindowsError, OSError):
+            fmap = mmap.mmap(input_file.fileno(), 0, prot=mmap.PROT_READ)
+        except OSError:
             fmap = None
         except ValueError:
             return get_pagecount_pil(filepath)
