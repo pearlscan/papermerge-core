@@ -7,7 +7,7 @@ from papermerge.core.storage import default_storage
 from papermerge.core import signal_definitions as signals
 
 from mglib import mime
-from mglib.pdfinfo import get_pagecount
+from papermerge.core.lib.pdfinfo import get_pagecount
 from mglib.path import (
     DocumentPath,
     PagePath,

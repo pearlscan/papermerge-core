@@ -20,7 +20,7 @@ from django.core.exceptions import ValidationError
 from django.contrib.staticfiles import finders
 from django.contrib.auth.decorators import login_required
 
-from mglib.pdfinfo import get_pagecount
+from papermerge.core.lib.pdfinfo import get_pagecount
 from mglib.step import Step
 from mglib.shortcuts import extract_img
 

@@ -13,7 +13,7 @@ from polymorphic_tree.managers import (
 
 from mglib import step
 from mglib.path import DocumentPath, PagePath
-from mglib.pdfinfo import get_pagecount
+from papermerge.core.lib.pdfinfo import get_pagecount
 from mglib.utils import get_assigns_after_delete
 
 from papermerge.contrib.admin.registries import sidebar

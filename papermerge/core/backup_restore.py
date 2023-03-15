@@ -8,7 +8,7 @@ import json
 from pathlib import PurePath
 
 from django.core.files.temp import NamedTemporaryFile
-from mglib.pdfinfo import get_pagecount
+from papermerge.core.lib.pdfinfo import get_pagecount
 
 from papermerge.core import __version__ as PAPERMERGE_VERSION
 from papermerge.core.models import (

@@ -2,7 +2,7 @@ import os
 import logging
 from django.core.management.base import BaseCommand
 
-from mglib.pdfinfo import get_pagecount
+from papermerge.core.lib.pdfinfo import get_pagecount
 
 logger = logging.getLogger(__name__)
 
@@ -10,7 +10,7 @@ logger = logging.getLogger(__name__)
 class Command(BaseCommand):
 
     help = """
-    Calls mglib.pdfinfo.get_pagecount(path) on given file path
+    Calls papermerge.core.lib.pdfinfo.get_pagecount(path) on given file path
     Useful for debugging purposes.
 """
 

@@ -4,7 +4,7 @@ from django.utils.translation import gettext as _
 
 from mglib.step import Step
 from mglib.path import PagePath, DocumentPath
-from mglib.pdfinfo import get_pagecount
+from papermerge.core.lib.pdfinfo import get_pagecount
 
 from .models import Document, Automate
 from .storage import default_storage
