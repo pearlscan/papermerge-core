@@ -6,7 +6,7 @@ from django.conf import settings
 from papermerge.core.storage import default_storage
 from papermerge.core import signal_definitions as signals
 
-from mglib import mime
+from papermerge.core.lib import mime
 from papermerge.core.lib.pdfinfo import get_pagecount
 from mglib.path import (
     DocumentPath,
