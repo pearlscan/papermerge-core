@@ -19,7 +19,7 @@ from mglib.shortcuts import (
     extract_hocr,
     extract_txt,
 )
-from mglib.tiff import convert_tiff2pdf
+from papermerge.core.lib.tiff import convert_tiff2pdf
 
 logger = logging.getLogger(__name__)
 
