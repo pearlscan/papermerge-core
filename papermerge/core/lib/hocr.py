@@ -3,17 +3,21 @@ import lxml.html
 import re
 import logging
 
-
 logger = logging.getLogger(__name__)
+
+BOX_RE = re.compile(
+    r'.*; bbox (?P<x1>\d+) (?P<y1>\d+) (?P<x2>\d+) (?P<y2>\d+);.*'
+)
+BOX_RE_WCONF = re.compile(
+    r'bbox (?P<x1>\d+) (?P<y1>\d+)'
+    r' (?P<x2>\d+) (?P<y2>\d+); x_wconf (?P<wconf>\d+)'
+)
 
 
 def extract_size(title):
-    box_re = re.compile(
-        r'.*; bbox (?P<x1>\d+) (?P<y1>\d+) (?P<x2>\d+) (?P<y2>\d+);.*'
-    )
     width = None
     height = None
-    matched_obj = re.match(box_re, title)
+    matched_obj = re.match(BOX_RE, title)
     if matched_obj:
         width = int(matched_obj['x2'])
         height = int(matched_obj['y2'])
@@ -46,11 +50,7 @@ class OcrxWord:
 
         'bbox 102 448 120 457; x_wconf 38'
         """
-        box_re = re.compile(
-            r'bbox (?P<x1>\d+) (?P<y1>\d+)'
-            r' (?P<x2>\d+) (?P<y2>\d+); x_wconf (?P<wconf>\d+)'
-        )
-        matched_obj = re.match(box_re, title)
+        matched_obj = re.match(BOX_RE_WCONF, title)
         if matched_obj:
             self.x1 = int(matched_obj['x1'])
             self.y1 = int(matched_obj['y1'])
