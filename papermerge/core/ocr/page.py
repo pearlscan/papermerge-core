@@ -447,7 +447,7 @@ def ocr_page(
         logger.error(
             f" user_id={user_id}"
             f" doc_id={document_id}"
-            f" page_num={page_num} error=Unkown file type"
+            f" page_num={page_num} error=Unknown file type"
         )
         return True
 

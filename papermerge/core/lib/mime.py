@@ -7,7 +7,11 @@ logger = logging.getLogger(__name__)
 class Mime:
     def __init__(self, filepath):
         self.filepath = filepath
-        self.mime_type = magic.from_file(self.filepath, mime=True)
+
+        try:
+            self.mime_type = magic.from_file(self.filepath, mime=True)
+        except FileNotFoundError:
+            self.mime_type = None
 
     def is_tiff(self):
         return self.mime_type == 'image/tiff'
