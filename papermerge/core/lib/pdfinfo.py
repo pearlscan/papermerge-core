@@ -110,7 +110,7 @@ def get_pagecount(filepath):
     mime_type = from_file(filepath, mime=True)
     # pure images (png, jpeg) have only one page :)
 
-    if mime_type in ('image/png', 'image/jpeg', 'image/jpg'):
+    if mime_type in ('image/png', 'image/jpeg', 'image/jpg', 'application/dicom'):
         # whatever png/jpg image is there - it is
         # considered by default one-page document.
         return 1
@@ -119,7 +119,7 @@ def get_pagecount(filepath):
     # django saves temporary file as application/octet-stream
     # Checking extensions is an extra method of finding out correct
     # mime type
-    if ext and ext.lower() in ('.jpeg', '.png', '.jpg'):
+    if ext and ext.lower() in ('.jpeg', '.png', '.jpg', '.dicom', '.dcm'):
         return 1
 
     if mime_type == 'image/tiff':

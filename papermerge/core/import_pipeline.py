@@ -350,7 +350,7 @@ def go_through_pipelines(init_kwargs, apply_kwargs):
     logger.info(f"{processor} importer: importing file")
 
     for pipeline in pipelines:
-
+        logger.debug('trying pipeline: %s', pipeline)
         try:
             pipeline_class = module_loading.import_string(pipeline)
         except ImportError:

@@ -435,7 +435,6 @@ def upload(request):
         'notes': notes,
         'apply_async': True
     }
-
     try:
         doc = go_through_pipelines(init_kwargs, apply_kwargs)
     except ValidationError as error:
@@ -445,7 +444,7 @@ def upload(request):
         status = 400
         msg = _(
             "File type not supported."
-            " Only pdf, tiff, png, jpeg files are supported"
+            " Only PDF, TIFF, PNG, JPEG and DICOM files are supported"
         )
         return msg, status
 
@@ -487,7 +486,7 @@ def usersettings(request, option, value):
 
 
 @login_required
-def hocr(request, id, step=None, page="1"):
+def hocr(request, id, step=None, page=1):
 
     logger.debug(f"hocr for doc_id={id}, step={step}, page={page}")
     try:
